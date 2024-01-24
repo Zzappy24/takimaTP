@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./database
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database:test
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push httpd Docker image
@@ -56,5 +56,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./httpd
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:test
           push: ${{ github.ref == 'refs/heads/main' }}
