@@ -24,6 +24,7 @@ jobs:
         run: |
           cd ./simple-api/ 
           mvn clean install
+          cd ../
          
   
 
