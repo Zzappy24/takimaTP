@@ -48,17 +48,19 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./database
-          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database:test
-          push: ${{ github.ref == 'refs/heads/main' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-database:test
+          push: ${{ github.ref == 'refs/heads/main' }}
+          
 
       - name: Build and push httpd Docker image
         if: github.ref == 'refs/heads/main'
         uses: docker/build-push-action@v3
         with:
           context: ./httpd
-          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:test
-          push: ${{ github.ref == 'refs/heads/main' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:test
+          push: ${{ github.ref == 'refs/heads/main' }}
+          
