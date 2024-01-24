@@ -42,13 +42,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
  
-      - name: Build and push backend Docker image
-        if: github.ref == 'refs/heads/main'
-        uses: docker/build-push-action@v3
-        with:
-          context: ./simple-api
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-backend:latest
-          push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push database Docker image
         if: github.ref == 'refs/heads/main'
