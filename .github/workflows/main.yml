@@ -22,5 +22,4 @@ jobs:
 
       - name: Build and test with Maven
         run: |
-          mvn -N io.takari:maven:wrapper # Generate Maven wrapper if not present
-          ./mvnw clean install
+          ./simple-api/mvn clean install
