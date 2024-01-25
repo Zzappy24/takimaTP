@@ -24,7 +24,7 @@ jobs:
         run: |
           mvn -B verify sonar:sonar -Dsonar.projectKey=Zzappy24_takimaTP -Dsonar.organization=zzappy24 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
   
-  
+   
   
   
   push-to-registry-backend:
