@@ -5,10 +5,10 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-     
+      
 jobs:
   push-to-registry-backend:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     needs: test-backend
     runs-on: ubuntu-latest
     steps:
