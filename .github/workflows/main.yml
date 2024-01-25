@@ -24,8 +24,9 @@ jobs:
         run: |
           cd ./simple-api/ 
           mvn clean install
-          cd ../
-         
+          mvn -B verify sonar:sonar -Dsonar.projectKey=yoan-sapienza -Dsonar.organization='yoan sapienza' -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
+  
+  
   
   
   push-to-registry-backend:
