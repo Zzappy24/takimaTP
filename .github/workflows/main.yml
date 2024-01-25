@@ -7,6 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
+  
   test-backend:
     runs-on: ubuntu-22.04
 
@@ -29,6 +30,8 @@ jobs:
   
   push-to-registry-backend:
     needs: test-backend
+    if: github.ref == 'refs/heads/main'
+
     runs-on: ubuntu-latest
     
     steps:
@@ -58,6 +61,8 @@ jobs:
     
   push-to-registry-database:
     needs: test-backend
+    if: github.ref == 'refs/heads/main'
+
     runs-on: ubuntu-latest
     
     steps:
@@ -87,6 +92,8 @@ jobs:
 
   push-to-registry-httpd:
     needs: test-backend
+    if: github.ref == 'refs/heads/main'
+
     runs-on: ubuntu-latest
     
     steps:
