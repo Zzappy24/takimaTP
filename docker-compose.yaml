@@ -29,6 +29,8 @@ services:
   frontend:
     build: ./devops-front
     container_name: my-frontend
+    ports:
+      - "81:81"
     networks:
       - my-network
     depends_on:
